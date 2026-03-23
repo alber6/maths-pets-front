@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
 import "./ChoosePet.css"
 
+import eggPlant from '../assets/eggPlant.png';
+import eggWater from '../assets/eggWater.png'; 
+import eggFire from '../assets/eggFire.png'; 
+
 const ChoosePet = () => {
         const navigate = useNavigate()
         const [ mascotaSeleccionada, setMascotaSeleccionada] = useState(null)
@@ -32,17 +36,17 @@ const ChoosePet = () => {
                     >
                     Agua 💧
                     </button>
-                <img src="/src/assets/eggWater.png"/>
+                <img src={eggWater} alt="Huevo de Agua" />
                 </div>
                 <div className="eggCard">
                     <button className={`btn-juego ${mascotaSeleccionada === 'Fuego' ? 'seleccionado' : ''}`} 
                     onClick={() => setMascotaSeleccionada('Fuego')}>Fuego 🔥</button>
-                 <img src="/src/assets/eggFire.png"/>
+                 <img src={eggFire} alt="Huevo de Fuego" />
                 </div>
                 <div className="eggCard">
                     <button className={`btn-juego ${mascotaSeleccionada === 'Planta' ? 'seleccionado' : ''}`} 
                     onClick={() => setMascotaSeleccionada('Planta')}>Planta 🌱</button>
-                    <img src="/src/assets/eggPlantpng.png"/>
+                    <img src={eggPlant} alt="Huevo de Planta" />
                 </div>
             </div>
             {mascotaSeleccionada && (
