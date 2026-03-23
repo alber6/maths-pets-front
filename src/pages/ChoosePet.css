@@ -1,0 +1,65 @@
+
+.eggCard{
+background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid #555;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.eggCard:hover {
+  transform: translateY(-15px) scale(1.05);
+  border-color: white;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.2);
+}
+
+.eggCard::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0px; height: 0px;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.eggCard:hover::after {
+  width: 300px; /* La luz se expande */
+  height: 300px;
+}
+
+.eggCard > img {
+    width: 200px;
+    border-radius: 8px;
+}
+
+/* Efecto para que el huevo "tiemble" o rote un poquito al pasar el ratón */
+.eggCard img {
+  width: 180px; 
+  z-index: 1; /* Para que la imagen quede por encima de la luz */
+  transition: transform 0.3s ease;
+}
+
+.eggCard:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.buttonConfirmado{
+  margin: 15px;
+}
+
+.btn-juego.seleccionado {
+  background-color: #ffffff;
+  color: black;
+  border-color: #ffffff;
+  transform: translateY(-2px) scale(1.1)
+}
